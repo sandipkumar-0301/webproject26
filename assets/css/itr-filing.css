@@ -1,0 +1,192 @@
+.irt-bg-color {
+    background-color: #fff !important;
+    padding: 30px 0px;
+}
+.irt-bg-color {
+    background-color: #ebebeb !important;
+}
+
+#itr_section .section-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: -5px;
+            margin-bottom: 30px;
+        }
+        #itr_section .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0 40px;
+        }
+        #itr_section h1 .fa-file-invoice {
+            color: #ff6200;
+        }
+        #itr_section .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-top: 5px solid #4f8389;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        #itr_section .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        #itr_section .card i {
+            font-size: 20px;
+            color: #ff6200;
+            margin-bottom: 0px;
+        }
+        #itr_section .card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        #itr_section .card ul, .card p {
+            margin-bottom: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        #itr_section .card li {
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 28px;
+            font-size: 16px;
+        }
+        #itr_section .card .notes-text {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        #itr_section .card li:last-child {
+            border-bottom: none;
+        }
+        #itr_section .highlight-box {
+            background: #fdf9f5;
+            border-left: 6px solid #e67e22;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        #itr_section .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        #itr_section .process-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        #itr_section .step-number {
+            background: #ff6200;
+            color: #fff;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        #itr_section .cta-button {
+            display: inline-block;
+            background: #e67e22;
+            color: #fff !important;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        #itr_section .cta-button:hover {
+            background: #ff6200;
+        }
+        #itr_section .text-center {
+            text-align: center;
+        }
+       #itr_section .important-note {
+            font-size: 0.95rem;
+            color: #666;
+            background: #f8f8f8;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 0px;
+        }
+        /* -------- Two Column Layout -------- */
+    #itr_section .saifi-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        margin: 40px 0;
+    }
+
+    #itr_section .saifi-two-col .col-block {
+        background: var(--saifi-cream);
+        border-radius: 12px;
+        padding: 30px 28px;
+        border-left: 6px solid var(--saifi-gold);
+    }
+
+    #itr_section .saifi-two-col .col-block h3 {
+        color: var(--saifi-navy);
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-family: 'Georgia', serif;
+    }
+
+    #itr_section .saifi-two-col .col-block ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #itr_section .saifi-two-col .col-block ul li {
+        padding: 8px 0;
+        border-bottom: 1px solid #e0d8cc;
+        display: block;
+        align-items: flex-start;
+        gap: 12px;
+        font-family: 'Arial', sans-serif;
+        line-height: 1.5;
+    }
+
+    #itr_section .saifi-two-col .col-block ul li:last-child {
+        border-bottom: none;
+    }
+    #itr_section .saifi-two-col .col-block ul li span {
+        display: block;
+    }
+
+    #itr_section .saifi-two-col .col-block ul li .check {
+        color: #27ae60;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    #itr_section .saifi-two-col .col-block ul li .cross {
+        color: #e74c3c;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+        @media (max-width: 768px) {
+            #itr_section .two-col {
+                grid-template-columns: 1fr;
+            }
+            #itr_section .container {
+                padding: 25px 15px;
+            }
+            #itr_section h1 {
+                font-size: 1.8rem;
+            }
+            #itr_section .saifi-two-col {
+                display: block;
+            }
+        }

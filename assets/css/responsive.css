@@ -1,0 +1,90 @@
+@media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-section {
+                padding: 3.5rem 0;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            #home-body-section-part3 .inner-box img {
+                max-width: 100% !important;
+            }
+            #home-body-section-part3 .inner-box {
+                margin: 0;
+                padding: 0 !important;
+            }
+            #home-body-section-part2 .inner-box {
+                margin: 0 0 30px 0 !important;
+            }
+            #home-body-section-part2 h4 {
+                font-size: 18px;
+                line-height: 30px;
+            }
+            .home-body-section-part3 h2 {
+                font-size: 24px;
+                margin: 20px 0px 20px 0px;
+                line-height: 24px;
+            }
+            .home-body-section-part3 h6 {
+                font-size: 20px;
+                margin: 0px 0px 20px 0px;
+            }
+            .home-body-section-part3 {
+                padding: 50px 20px;
+            }
+                #home-body-section-part3 .inner-box img {
+                 max-width: 100%; 
+            }
+            .home-body-section-part3 .inner-box p i {
+                font-size: 16px;
+            }
+            #home-body-section-part2 h2 {
+                color: #54595f;
+                font-size: 24px;
+                margin: 20px 0px 30px 0px;
+            }
+            #home-body-section-part2 .align-items-center p {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            .body-bg-color p {
+                color: #404e5c;
+                font-size: 20px;
+                line-height: 26px;
+            }
+            .body-bg-color h2 {
+                color: #71979C;
+                font-size: 24px;
+                margin: 20px 0px;
+            }
+
+            .navbar-expand-lg .navbar-nav .dropdown-menu {
+                position: relative !important;
+                border-radius: 5px;
+                display: block !important;
+                background-color: transparent !important;
+                border: 0px solid;
+                color: #fff !important;
+            }
+
+            .navbar-nav .nav-item a {
+                font-size: 14px;
+                color: #fff;
+            }
+            .nav-item.dropdown {
+                margin-left: 100px;
+            }
+            .practice-block h3 {
+                margin-top: 15px;
+            }
+            .home-page-main h2.text-center {
+                text-align: left !important;
+            }
+            #home-body-section-part3 .inner-box {
+                margin: 0 0 10px 0;
+                padding: 10px 10px;
+            }
+
+        }
