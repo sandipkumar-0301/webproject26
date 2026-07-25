@@ -12,19 +12,14 @@ $basePath = $depth > 0 ? str_repeat('../', $depth) : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
     <title>Saifi Trust & Associates | Boutique IP Law Firm</title>
-
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="<?php echo $basePath; ?>assets/images/favicon.png">
     <link rel="shortcut icon" href="<?php echo $basePath; ?>assets/images/favicon.ico">
     <link rel="apple-touch-icon" href="<?php echo $basePath; ?>assets/images/favicon.png">
-
     <!-- Bootstrap 5 CSS + Icons + Google Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/style.css">

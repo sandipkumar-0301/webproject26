@@ -1,3 +1,3 @@
-There have two htaccess, in this project first is use for desktop and second for server.
+There have two htaccess, First is use for desktop and second for server.
 1 .htaccess_desktopaccess_key
 This is for desktop view
