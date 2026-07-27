@@ -490,26 +490,212 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Welcome</h5>
+                    <h3 class="modal-title text-center">Disclaimer</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
                 <div class="modal-body">
-                    <p>
-                        This website is intended for educational and informational purposes only.
-                        The content provided should not be considered legal advice.
-                    </p>
+                    <p>In compliance with the rules of the Bar Council of India, we are strictly prohibited from soliciting work or engaging in any form of advertising. By clicking "I Agree" below, you acknowledge that accessing, viewing, or using any information on this website does not constitute solicitation, advertisement, inducement, or personal communication by or on behalf of <b>Saifi Trust & Associates</b>, nor does it create an attorney-client relationship.</p>
+                    <p>The content provided on this website is for informational purposes only and should not be construed as legal advice. Users are advised to conduct their own independent inquiries before acting on any information herein. While we strive to ensure the accuracy of the content, <b>Saifi Trust & Associates</b> expressly disclaims any liability arising from reliance placed by the user or any third party on the information provided.</p>
                 </div>
 
-                <div class="modal-footer">
-                    <button type="button" id="confirm_payment" class="btn btn-primary">
-                        Continue
+                <div class="modal-footer text-center">
+                    <button type="button" id="confirm_payment" class="btn btn-secondary">
+                        I Agree
+                    </button>
+                    <button type="button" id="confirm_payment" class="btn btn-secondary">
+                        I Disagree
                     </button>
                 </div>
 
             </div>
         </div>
     </div>
+
+
+    <!-- WhatsApp Chat Widget -->
+<div id="whatsapp-widget">
+
+    <!-- Chat Popup -->
+    <div class="whatsapp-popup" id="whatsapp-popup">
+        <div class="whatsapp-header">
+            <div>
+                <strong>Chat with us</strong>
+                <span>Typically replies instantly</span>
+            </div>
+            <button type="button" id="whatsapp-close">&times;</button>
+        </div>
+
+        <div class="whatsapp-body">
+            <div class="whatsapp-message">
+                Hello 👋<br>
+                How can we help you today?
+            </div>
+        </div>
+
+        <div class="whatsapp-footer">
+            <a
+                href="https://wa.me/918368775386?text=Hello%20Saifi%20Trust%20and%20Associates%2C%20I%20need%20some%20information."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="whatsapp-start-chat">
+                💬 Start Chat
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Button -->
+    <button type="button" id="whatsapp-button" aria-label="Chat on WhatsApp">
+        <span class="whatsapp-icon">☏</span>
+    </button>
+
+</div>
+
+<style>
+#whatsapp-widget {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 999999;
+    font-family: Arial, sans-serif;
+}
+
+/* Floating WhatsApp Button */
+#whatsapp-button {
+    width: 60px;
+    height: 60px;
+    border: 0;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-icon {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Popup */
+.whatsapp-popup {
+    position: absolute;
+    right: 0;
+    bottom: 75px;
+    width: 330px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.25);
+    display: none;
+}
+
+/* Header */
+.whatsapp-header {
+    background: #075E54;
+    color: #fff;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.whatsapp-header strong {
+    display: block;
+    font-size: 17px;
+}
+
+.whatsapp-header span {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.9;
+}
+
+#whatsapp-close {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Body */
+.whatsapp-body {
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+.whatsapp-message {
+    background: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Footer */
+.whatsapp-footer {
+    padding: 15px;
+    background: #fff;
+}
+
+.whatsapp-start-chat {
+    display: block;
+    text-align: center;
+    background: #25D366;
+    color: #fff !important;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.whatsapp-start-chat:hover {
+    background: #128C7E;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    #whatsapp-widget {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .whatsapp-popup {
+        width: calc(100vw - 30px);
+        right: 0;
+    }
+
+    #whatsapp-button {
+        width: 55px;
+        height: 55px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const button = document.getElementById('whatsapp-button');
+    const popup = document.getElementById('whatsapp-popup');
+    const close = document.getElementById('whatsapp-close');
+
+    button.addEventListener('click', function () {
+        popup.style.display = 'block';
+    });
+
+    close.addEventListener('click', function () {
+        popup.style.display = 'none';
+    });
+
+});
+</script>
+
 <?php
     include('commonFiles/footer.php');
 ?>
