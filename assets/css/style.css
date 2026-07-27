@@ -935,3 +935,7 @@ h3 {
 .inner-box .more-btn {
     text-transform: uppercase;
 }
+
+.modal-dialog {
+    max-width: 50%;
+}
