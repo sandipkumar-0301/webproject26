@@ -535,7 +535,7 @@
 
         <div class="whatsapp-footer">
             <a
-                href="https://wa.me/918287151453?text=Hello%20Saifi%20Trust%20and%20Associates%2C%20I%20need%20some%20information."
+                href="https://wa.me/919650732435?text=Hello%20Saifi%20Trust%20and%20Associates%2C%20I%20need%20some%20information."
                 target="_blank"
                 rel="noopener noreferrer"
                 class="whatsapp-start-chat">
