@@ -12,7 +12,7 @@
                         <p class="hero-sub lead">Compassionate guidance for your legal needs. Protecting ideas, brands, and creations with integrity.</p>
                         <div class="mt-4">
                             <a href="#contact" class="btn btn-accent me-3">Contact Us <i class="fas fa-arrow-right ms-2"></i></a>
-                            <a href="#about" class="btn btn-outline-light rounded-pill">Learn More</a>
+                            <a href="#about" class="btn btn-accent">About Us <i class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-5 text-center banner-sectiom-link">

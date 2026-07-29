@@ -8,41 +8,47 @@
         <h1 class="text-center">Services</h1>
         <div class="row g-5">
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <a href="../familyLawMatters/domestic-violence.php"><img src="<?php echo $basePath; ?>assets/images/domestic-violence-new.png" class="card-img-top" alt="domestic-violence-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-hand-holding-heart"></i></p>
-                    <p><a href="../familyLawMatters/domestic-violence.php">Domestic Violence</a></p>                    
-                </div>                
+                    <p>Domestic Violence</p>                    
+                </div>
+                </a>               
             </div>
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <a href="maintenance.php"><img src="<?php echo $basePath; ?>assets/images/maintenance-new.png" class="card-img-top" alt="maintenance-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-hand-holding-usd"></i></p>
-                    <p><a href="maintenance.php">Maintenance</a></p>                    
-                </div>                
+                    <p>Maintenance</p>                    
+                </div>
+                </a>              
             </div>
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <a href="dowry.php"><img src="<?php echo $basePath; ?>assets/images/dowry-new.png" class="card-img-top" alt="dowry-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-clock"></i></p>
-                    <p><a href="dowry.php">Dowry</a></p>                    
-                </div>                
+                    <p>Dowry</p>                    
+                </div>
+                </a>               
             </div>
             <div class="col-sm-6 col-md-6 col-lg-4">
+               <a href="../familyLawMatters/alimony.php"><img src="<?php echo $basePath; ?>assets/images/alimony-new.png" class="card-img-top" alt="alimony-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-gavel"></i></p>
-                    <p><a href="../familyLawMatters/alimony.php">Alimony</a></p>                    
-                </div>                
+                    <p>Alimony</p>                    
+                </div>
+                </a>             
             </div>
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <a href="live-in-relationship.php"><img src="<?php echo $basePath; ?>assets/images/live-in-relationship-new.png" class="card-img-top" alt="live-in-relationship-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-heart"></i></p>
-                    <p><a href="live-in-relationship.php">Live-in Relationship</a></p>                    
-                </div>                
+                    <p>Live-in Relationship</p>                    
+                </div>
+                </a>            
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <a href="../familyLawMatters/divorce.php"><img src="<?php echo $basePath; ?>assets/images/divorce-new.png" class="card-img-top" alt="divorce-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-balance-scale"></i></p>
-                    <p><a href="../familyLawMatters/divorce.php">Divorce</a></p>                    
-                </div>                
+                    <p>Divorce</p>                    
+                </div>
+                </a>               
             </div>
             
             <div class="col-sm-6 col-md-6 col-lg-4">

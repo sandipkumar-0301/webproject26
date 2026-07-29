@@ -131,6 +131,7 @@
             offering trusted legal guidance, strategic representation, and dedicated support
             when it matters most.
         </p>
+
         <p>
                     <img src="assets/images/about-us.png" alt="About US">
                </p> 

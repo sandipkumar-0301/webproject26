@@ -61,6 +61,7 @@ $basePath = $depth > 0 ? str_repeat('../', $depth) : '';
                 </li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo $basePath; ?>about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo $basePath; ?>blog.php">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo $basePath; ?>our-team.php">Our Team</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo $basePath; ?>contact">Contact</a></li>
                 <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
                     <a class="btn btn-accent btn-sm" href="<?php echo $basePath; ?>contact">Appointment</a>
