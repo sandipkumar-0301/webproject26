@@ -34,11 +34,6 @@
                         has helped countless clients find justice. Saifi is known for his strategic approach, compassionate 
                         client handling, and unwavering commitment to the rule of law.
                     </p>
-                    <div class="social-links mt-3">
-                        <a href="#" class="text-decoration-none me-2" style="color: #8e44ad;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-decoration-none me-2" style="color: #8e44ad;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-decoration-none" style="color: #8e44ad;"><i class="fas fa-envelope"></i></a>
-                    </div>
                 </div>
             </div>
 
@@ -59,11 +54,6 @@
                         excellence. His meticulous attention to detail and ability to simplify complex legal matters 
                         make him an invaluable asset to the team and clients alike.
                     </p>
-                    <div class="social-links mt-3">
-                        <a href="#" class="text-decoration-none me-2" style="color: #f39c12;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-decoration-none me-2" style="color: #f39c12;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-decoration-none" style="color: #f39c12;"><i class="fas fa-envelope"></i></a>
-                    </div>
                 </div>
             </div>
 
@@ -84,11 +74,6 @@
                         passion for protecting digital rights and has represented several tech startups in high-stakes 
                         litigation. His innovative thinking and tech-savvy approach add a modern edge to the firm.
                     </p>
-                    <div class="social-links mt-3">
-                        <a href="#" class="text-decoration-none me-2" style="color: #27ae60;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-decoration-none me-2" style="color: #27ae60;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-decoration-none" style="color: #27ae60;"><i class="fas fa-envelope"></i></a>
-                    </div>
                 </div>
             </div>
 
@@ -100,7 +85,7 @@
                 <div class="bg-light p-5 rounded-4" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;">
                     <h3 style="color: #2c3e50;">Want to work with us?</h3>
                     <p class="text-muted">Our team is ready to help you with your legal needs. Get in touch today.</p>
-                    <a href="/contact.php" class="btn btn-lg px-5" 
+                    <a href="<?php echo $basePath; ?>contact.php" class="btn btn-lg px-5" 
                        style="background: linear-gradient(90deg, #8e44ad, #f39c12); color: #fff; border: none; border-radius: 50px;">
                         <i class="fas fa-phone-alt me-2"></i>Contact Us
                     </a>
