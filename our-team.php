@@ -14,11 +14,11 @@
             </div>
         </div>
 
-        <!-- Team Members Grid -->
+        <!-- Team Members Grid - 2 Rows with 2 Members Each -->
         <div class="row g-4 justify-content-center">
             
-            <!-- Team Member 1: Saifi -->
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <!-- Row 1: Team Member 1 - Saifi (Founder) -->
+            <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="team-card bg-white rounded-4 shadow-sm p-4 text-center h-100 transition-all" 
                      style="border-top: 5px solid #8e44ad; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
                     <div class="team-avatar mx-auto mb-3" 
@@ -26,10 +26,10 @@
                         S
                     </div>
                     <h3 class="fw-bold" style="color: #2c3e50;">Saifi</h3>
-                    <p class="text-primary fw-semibold" style="color: #8e44ad !important;">Founder & Senior Advocate</p>
+                    <p class="fw-semibold" style="color: #8e44ad;">Founder & Senior Advocate</p>
                     <div class="divider mx-auto" style="width: 40px; height: 2px; background: #f39c12; margin: 10px auto;"></div>
                     <p class="text-muted small" style="font-size: 0.95rem; line-height: 1.6;">
-                        With over 15 years of experience in criminal and civil litigation, Saifi is the driving force behind 
+                        With over 10 years of experience in criminal and civil litigation, Saifi is the driving force behind 
                         Saifi Trust & Associates. His expertise in domestic violence cases, property disputes, and family law 
                         has helped countless clients find justice. Saifi is known for his strategic approach, compassionate 
                         client handling, and unwavering commitment to the rule of law.
@@ -37,28 +37,49 @@
                 </div>
             </div>
 
-            <!-- Team Member 2: Shakeel -->
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <!-- Row 1: Team Member 2 - Mohammed Yousuf (Managing Partner) -->
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="team-card bg-white rounded-4 shadow-sm p-4 text-center h-100 transition-all" 
+                     style="border-top: 5px solid #e74c3c; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
+                    <div class="team-avatar mx-auto mb-3" 
+                         style="width: 120px; height: 120px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 36px; font-weight: bold;">
+                        MY
+                    </div>
+                    <h3 class="fw-bold" style="color: #2c3e50;">Mohammed Yousuf</h3>
+                    <p class="fw-semibold" style="color: #e74c3c;">Managing Partner</p>
+                    <div class="divider mx-auto" style="width: 40px; height: 2px; background: #f39c12; margin: 10px auto;"></div>
+                    <p class="text-muted small" style="font-size: 0.95rem; line-height: 1.6;">
+                        Mohammed Yousuf brings over 10 years of extensive legal experience, specializing in criminal defense, 
+                        civil litigation, and alternative dispute resolution. As Managing Partner, he oversees the firm's 
+                        strategic operations and client relations. His sharp analytical skills, combined with a client-centric 
+                        approach, have earned him a reputation as a trusted legal advisor. Yousuf is committed to delivering 
+                        justice with integrity and excellence.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row 2: Team Member 3 - Shakeel -->
+            <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="team-card bg-white rounded-4 shadow-sm p-4 text-center h-100 transition-all" 
                      style="border-top: 5px solid #f39c12; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
                     <div class="team-avatar mx-auto mb-3" 
-                         style="width: 120px; height: 120px; background: linear-gradient(135deg, #f39c12, #f1c40f); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 48px; font-weight: bold;">
+                         style="width: 120px; height: 120px; background: linear-gradient(135deg, #f39c12, #f1c40f); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 40px; font-weight: bold;">
                         Sh
                     </div>
                     <h3 class="fw-bold" style="color: #2c3e50;">Shakeel</h3>
-                    <p class="text-primary fw-semibold" style="color: #f39c12 !important;">Managing Partner</p>
+                    <p class="fw-semibold" style="color: #f39c12;">Managing Partner</p>
                     <div class="divider mx-auto" style="width: 40px; height: 2px; background: #8e44ad; margin: 10px auto;"></div>
                     <p class="text-muted small" style="font-size: 0.95rem; line-height: 1.6;">
-                        Shakeel brings over 12 years of legal acumen, specializing in corporate law, contract drafting, 
-                        and arbitration. As Managing Partner, he oversees the firm's strategic growth and operational 
+                        Shakeel brings over 8 years of legal acumen, specializing in corporate law, contract drafting, 
+                        and arbitration. As Senior Partner, he oversees the firm's strategic growth and operational 
                         excellence. His meticulous attention to detail and ability to simplify complex legal matters 
                         make him an invaluable asset to the team and clients alike.
                     </p>
                 </div>
             </div>
 
-            <!-- Team Member 3: Nitin Bhaskar -->
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <!-- Row 2: Team Member 4 - Nitin Bhaskar -->
+            <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="team-card bg-white rounded-4 shadow-sm p-4 text-center h-100 transition-all" 
                      style="border-top: 5px solid #27ae60; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
                     <div class="team-avatar mx-auto mb-3" 
@@ -66,10 +87,10 @@
                         NB
                     </div>
                     <h3 class="fw-bold" style="color: #2c3e50;">Nitin Bhaskar</h3>
-                    <p class="text-primary fw-semibold" style="color: #27ae60 !important;">Senior Associate</p>
+                    <p class="fw-semibold" style="color: #27ae60;">Senior Associate</p>
                     <div class="divider mx-auto" style="width: 40px; height: 2px; background: #8e44ad; margin: 10px auto;"></div>
                     <p class="text-muted small" style="font-size: 0.95rem; line-height: 1.6;">
-                        Nitin Bhaskar is a dynamic legal professional with 8+ years of experience in intellectual property 
+                        Nitin Bhaskar is a dynamic legal professional with 5+ years of experience in intellectual property 
                         rights, cyber law, and technology contracts. A graduate of National Law University, Nitin has a 
                         passion for protecting digital rights and has represented several tech startups in high-stakes 
                         litigation. His innovative thinking and tech-savvy approach add a modern edge to the firm.
@@ -99,7 +120,7 @@
 <!-- Add Font Awesome for Icons (if not already in header) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Hover Effect Script (optional - adds smooth interaction) -->
+<!-- Hover Effect Styles -->
 <style>
     .team-card:hover {
         transform: translateY(-10px) !important;
