@@ -92,10 +92,11 @@
             .modal-body p {
                 font-size: 14px;
                 line-height: 22px;
+                padding: 0px;
             }
             .modal-header h3 {
                 margin-top: 10px;
-                margin-left: 20px;
+                margin-left: 0px;
             }
 
         }
