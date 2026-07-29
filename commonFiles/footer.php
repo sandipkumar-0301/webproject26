@@ -27,7 +27,8 @@ $basePath = $depth > 0 ? str_repeat('../', $depth) : '';
                         </ul>
                     </li>
                     <li><a href="<?php echo $basePath; ?>blog.php">Blog</a></li>
-                    <li><a href="<?php echo $basePath; ?>contact">Careers</a></li>
+                    <li><a href="<?php echo $basePath; ?>our-team.php">Our Team</a></li>
+                    <li><a href="<?php echo $basePath; ?>contact">Contact</a></li>
                 </ul>
             </div>
             <div class="col-md-4 mb-4">

@@ -919,6 +919,7 @@ h3 {
 
 .services-section-icons .service-icon {
     text-align: center;
+    margin-top: 15px;
 }
 .services-section-icons .service-icon p {
     font-size: 20px;
@@ -938,4 +939,20 @@ h3 {
 
 .modal-dialog {
     max-width: 50%;
+}
+
+.modal-body p {
+    font-size: 18px;
+    line-height: 26px;
+    padding: 0px 20px;
+}
+.modal-header h3 {
+    margin-left: 20px;
+}
+#services .container a {
+    text-decoration: none;
+}
+
+#services .container a img {
+    border-radius: 20px;
 }
