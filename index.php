@@ -386,7 +386,7 @@
                     <div class="bg-secondary-light p-4 p-md-5 rounded-4 h-100 shadow-sm" style="background: #F4F1EA;">
                         <h3 class="fw-bold mb-3"><i class="fas fa-envelope-open-text me-2" style="color: var(--primary-accent);"></i> Subscribe Now</h3>
                         <p class="text-muted">Stay updated with our latest legal news, IP insights, and firm announcements.</p>
-                        <form id="subscribeForm" action="send-email.php" method="post">
+                        <form id="subscribeForm" action="send-email" method="post">
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">Name</label>
                                 <input type="text" class="form-control rounded-pill border-0 shadow-sm" 
@@ -730,7 +730,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ms-2"></i>';
 
             // ✅ Use absolute URL to avoid redirects
-            const actionUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'send-email.php';
+            const actionUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'send-email';
             // OR simply: const actionUrl = '/send-email.php';
             
             const formData = new FormData(form);
