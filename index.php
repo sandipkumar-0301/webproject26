@@ -713,6 +713,9 @@ document.addEventListener('DOMContentLoaded', function () {
 // =============================================
 // PART 3: SUBSCRIPTION FORM
 // =============================================
+// =============================================
+// PART 3: SUBSCRIPTION FORM (FIXED)
+// =============================================
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('subscribeForm');
     const alertDiv = document.getElementById('subscribeAlert');
@@ -726,22 +729,43 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ms-2"></i>';
 
-            const actionUrl = form.getAttribute('action') || 'send-email.php';
+            // ✅ Use absolute URL to avoid redirects
+            const actionUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'send-email.php';
+            // OR simply: const actionUrl = '/send-email.php';
+            
             const formData = new FormData(form);
 
-            // Debug: Log form data
             console.log('=== Form Submission ===');
             console.log('Action URL:', actionUrl);
+            console.log('Current page:', window.location.href);
+            
             for (let pair of formData.entries()) {
                 console.log(pair[0] + ':', pair[1]);
             }
 
+            // ✅ Use 'manual' redirect to detect redirects
             fetch(actionUrl, {
                 method: 'POST',
-                body: formData
+                body: formData,
+                redirect: 'manual'  // ← Detect redirects
             })
             .then(response => {
                 console.log('Response status:', response.status);
+                console.log('Response type:', response.type);
+                console.log('Redirected?', response.redirected);
+                console.log('Final URL:', response.url);
+                
+                // If redirected, show error
+                if (response.redirected) {
+                    throw new Error(`Redirect detected to: ${response.url}. The server is redirecting POST to GET.`);
+                }
+                
+                // Check if response is JSON
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    throw new Error(`Expected JSON but got ${contentType}. The file might be missing or has errors.`);
+                }
+                
                 return response.json();
             })
             .then(data => {
@@ -761,7 +785,9 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.error('Fetch error:', error);
-                alertDiv.innerHTML = `<div class="alert alert-danger">Network error. Please try again.</div>`;
+                alertDiv.innerHTML = `<div class="alert alert-danger">
+                    <strong>Error:</strong> ${error.message}
+                </div>`;
             })
             .finally(() => {
                 submitBtn.disabled = false;
