@@ -468,32 +468,24 @@
 
     <!-- Popup after grand total and collection amount -->
     <!-- Modal -->
-    <div class="modal fade" id="verify_amount_popup" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h3 class="modal-title text-center">Disclaimer</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body">
-                    <p>In compliance with the rules of the Bar Council of India, we are strictly prohibited from soliciting work or engaging in any form of advertising. By clicking "I Agree" below, you acknowledge that accessing, viewing, or using any information on this website does not constitute solicitation, advertisement, inducement, or personal communication by or on behalf of <b>Saifi Trust & Associates</b>, nor does it create an attorney-client relationship.</p>
-                    <p>The content provided on this website is for informational purposes only and should not be construed as legal advice. Users are advised to conduct their own independent inquiries before acting on any information herein. While we strive to ensure the accuracy of the content, <b>Saifi Trust & Associates</b> expressly disclaims any liability arising from reliance placed by the user or any third party on the information provided.</p>
-                </div>
-
-                <div class="modal-footer text-center">
-                    <button type="button" id="confirm_payment" class="btn btn-secondary">
-                        I Agree
-                    </button>
-                    <button type="button" id="confirm_payment" class="btn btn-secondary">
-                        I Disagree
-                    </button>
-                </div>
-
+    <div class="modal fade" id="disclaimerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center">Disclaimer</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>In compliance with the rules of the Bar Council of India, we are strictly prohibited from soliciting work or engaging in any form of advertising. By clicking "I Agree" below, you acknowledge that accessing, viewing, or using any information on this website does not constitute solicitation, advertisement, inducement, or personal communication by or on behalf of <b>Saifi Trust & Associates</b>, nor does it create an attorney-client relationship.</p>
+                <p>The content provided on this website is for informational purposes only and should not be construed as legal advice. Users are advised to conduct their own independent inquiries before acting on any information herein. While we strive to ensure the accuracy of the content, <b>Saifi Trust & Associates</b> expressly disclaims any liability arising from reliance placed by the user or any third party on the information provided.</p>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" id="agreeButton" class="btn btn-secondary">I Agree</button>
+                <button type="button" id="disagreeButton" class="btn btn-secondary">I Disagree</button>
             </div>
         </div>
     </div>
+</div>
 
 
     <!-- WhatsApp Chat Widget -->
@@ -681,65 +673,121 @@
 </style>
 
 <script>
+// =============================================
+// PART 1: WHATSAPP WIDGET
+// =============================================
 document.addEventListener('DOMContentLoaded', function () {
-
     const button = document.getElementById('whatsapp-button');
     const popup = document.getElementById('whatsapp-popup');
     const close = document.getElementById('whatsapp-close');
 
-    button.addEventListener('click', function () {
-        popup.style.display = 'block';
-    });
+    if (button) {
+        button.addEventListener('click', function () {
+            popup.style.display = 'block';
+        });
+    }
 
-    close.addEventListener('click', function () {
-        popup.style.display = 'none';
-    });
-
+    if (close) {
+        close.addEventListener('click', function () {
+            popup.style.display = 'none';
+        });
+    }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('subscribeForm');
-            const alertDiv = document.getElementById('subscribeAlert');
+// =============================================
+// PART 2: DISCLAIMER MODAL (24-hour cooldown)
+// =============================================
+document.addEventListener('DOMContentLoaded', function () {
+    const popupTime = localStorage.getItem('disclaimerPopupTime');
+    const now = new Date().getTime();
+    const oneDay = 86400000; // 24 hours
 
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
+    // Show disclaimer if not shown in last 24 hours
+    if (!popupTime || (now - popupTime) > oneDay) {
+        const modal = new bootstrap.Modal(document.getElementById('disclaimerModal'));
+        modal.show();
 
-                    // Get the action URL
-                    const actionUrl = form.getAttribute('action') || 'send-email.php';
-                    
-                    // ✅ Use FormData from the form
-                    const formData = new FormData(form);
-
-                    // Log what's being sent (for debugging)
-                    console.log('Sending to:', actionUrl);
-                    console.log('Form data:', formData);
-
-                    // ✅ EXPLICIT POST METHOD
-                    fetch(actionUrl, {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => {
-                        console.log('Response status:', response.status);
-                        return response.json();
-                    })
-                    .then(data => {
-                        console.log('Response data:', data);
-                        if (data.status === 'success') {
-                            alertDiv.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
-                            form.reset();
-                        } else {
-                            alertDiv.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Fetch error:', error);
-                        alertDiv.innerHTML = `<div class="alert alert-danger">Network error. Please try again.</div>`;
-                    });
-                });
-            }
+        // When user clicks "I Agree"
+        document.getElementById('agreeButton').addEventListener('click', function () {
+            localStorage.setItem('disclaimerPopupTime', now.toString());
+            modal.hide();
         });
+
+        // When user clicks "I Disagree" - redirect or handle
+        document.getElementById('disagreeButton').addEventListener('click', function () {
+            localStorage.setItem('disclaimerPopupTime', now.toString());
+            modal.hide();
+            // Optional: Redirect to Google or close
+            // window.location.href = 'https://www.google.com';
+        });
+
+        // When modal is closed (X button or click outside)
+        document.getElementById('disclaimerModal').addEventListener('hidden.bs.modal', function () {
+            localStorage.setItem('disclaimerPopupTime', now.toString());
+        });
+    }
+});
+
+// =============================================
+// PART 3: SUBSCRIPTION FORM
+// =============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('subscribeForm');
+    const alertDiv = document.getElementById('subscribeAlert');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Disable submit button
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ms-2"></i>';
+
+            const actionUrl = form.getAttribute('action') || 'send-email.php';
+            const formData = new FormData(form);
+
+            // Debug: Log form data
+            console.log('=== Form Submission ===');
+            console.log('Action URL:', actionUrl);
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + ':', pair[1]);
+            }
+
+            fetch(actionUrl, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Server response:', data);
+                if (data.status === 'success') {
+                    alertDiv.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="fas fa-check-circle me-2"></i> ${data.message}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>`;
+                    form.reset();
+                } else {
+                    alertDiv.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="fas fa-exclamation-circle me-2"></i> ${data.message}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>`;
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                alertDiv.innerHTML = `<div class="alert alert-danger">Network error. Please try again.</div>`;
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Submit <i class="fas fa-paper-plane ms-2"></i>';
+            });
+        });
+    }
+});
 </script>
 
 <?php

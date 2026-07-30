@@ -1,30 +1,41 @@
 <?php
 header('Content-Type: application/json');
 
-// ✅ Allow both GET and POST for debugging
-// Change this line:
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-// To this:
-if ($_SERVER["REQUEST_METHOD"] == "POST" || $_SERVER["REQUEST_METHOD"] == "GET") {
+// Enable error reporting for debugging (remove in production)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // Get data from either POST or GET
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = isset($_POST['name']) ? htmlspecialchars(strip_tags(trim($_POST['name']))) : '';
-        $email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
-    } else {
-        // GET method (for debugging only)
-        $name = isset($_GET['name']) ? htmlspecialchars(strip_tags(trim($_GET['name']))) : '';
-        $email = isset($_GET['email']) ? filter_var(trim($_GET['email']), FILTER_SANITIZE_EMAIL) : '';
+    // Log incoming data
+    error_log("POST data: " . print_r($_POST, true));
+    
+    // Get form data
+    $name = isset($_POST['name']) ? htmlspecialchars(strip_tags(trim($_POST['name']))) : '';
+    $email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
+    
+    // Debug: Log extracted values
+    error_log("Name: '$name'");
+    error_log("Email: '$email'");
+    
+    // Validate
+    if (empty($name)) {
+        echo json_encode(['status' => 'error', 'message' => 'Please enter your name']);
+        exit;
     }
     
-    // Rest of your code...
-    if (empty($name) || strlen($name) < 2) {
-        echo json_encode(['status' => 'error', 'message' => 'Please enter a valid name']);
+    if (strlen($name) < 2) {
+        echo json_encode(['status' => 'error', 'message' => 'Name must be at least 2 characters']);
+        exit;
+    }
+    
+    if (empty($email)) {
+        echo json_encode(['status' => 'error', 'message' => 'Please enter your email']);
         exit;
     }
     
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode(['status' => 'error', 'message' => 'Please enter a valid email']);
+        echo json_encode(['status' => 'error', 'message' => 'Please enter a valid email address']);
         exit;
     }
     
@@ -43,12 +54,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" || $_SERVER["REQUEST_METHOD"] == "GET")
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     
     if (mail($to, $subject, $message, $headers)) {
-        echo json_encode(['status' => 'success', 'message' => 'Subscription successful!']);
+        echo json_encode(['status' => 'success', 'message' => 'Thank you for subscribing!']);
     } else {
+        error_log("Mail failed for: $email");
         echo json_encode(['status' => 'error', 'message' => 'Failed to send. Please try again.']);
     }
     
 } else {
-    echo json_encode(['status' => 'error', 'message' => 'Invalid request method. Please use POST.']);
+    echo json_encode([
+        'status' => 'error', 
+        'message' => 'Invalid request method. Please use POST.',
+        'debug' => ['method' => $_SERVER['REQUEST_METHOD']]
+    ]);
 }
 ?>
