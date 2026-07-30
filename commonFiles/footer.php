@@ -19,13 +19,13 @@ $basePath = $depth > 0 ? str_repeat('../', $depth) : '';
                 <h4 class="fw-bold text-white">Quick Links</h4>
                 <ul class="list-unstyled">
                     <li><a href="<?php echo $basePath; ?>index">Home</a></li>
-                    <li><a href="<?php echo $basePath; ?>about">About Us</a></li>                   
                     <li><a href="<?php echo $basePath; ?>services/services.php">Services</a>
                         <ul class="list-unstyled" style="margin-left: 20px;">
                             <li><a href="<?php echo $basePath; ?>services/ipr.php">IPR</a></li>
                             <li><a href="<?php echo $basePath; ?>family-matters">Family Matters</a></li>
                         </ul>
                     </li>
+                    <li><a href="<?php echo $basePath; ?>about">About</a></li>
                     <li><a href="<?php echo $basePath; ?>blog.php">Blog</a></li>
                     <li><a href="<?php echo $basePath; ?>our-team.php">Our Team</a></li>
                     <li><a href="<?php echo $basePath; ?>contact">Contact</a></li>

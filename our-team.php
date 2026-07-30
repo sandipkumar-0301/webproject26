@@ -28,12 +28,7 @@
                     <h3 class="fw-bold" style="color: #2c3e50;">Saifi</h3>
                     <p class="fw-semibold" style="color: #8e44ad;">Founder & Senior Advocate</p>
                     <div class="divider mx-auto" style="width: 40px; height: 2px; background: #f39c12; margin: 10px auto;"></div>
-                    <p class="text-muted small" style="font-size: 0.95rem; line-height: 1.6;">
-                        With over 10 years of experience in criminal and civil litigation, Saifi is the driving force behind 
-                        Saifi Trust & Associates. His expertise in domestic violence cases, property disputes, and family law 
-                        has helped countless clients find justice. Saifi is known for his strategic approach, compassionate 
-                        client handling, and unwavering commitment to the rule of law.
-                    </p>
+                    <p class="text-muted small" style="font-size: 0.95rem; line-height: 1.6;">Professional with 10+ years of experience in intellectual property rights His other areas of practice in domestic violence cases, property disputes, and family law has helped countless clients find justice. Saifi is known for his strategic approach, compassionate client handling, and unwavering commitment to the rule of law.</p>
                 </div>
             </div>
 
@@ -45,16 +40,10 @@
                          style="width: 120px; height: 120px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 36px; font-weight: bold;">
                         MY
                     </div>
-                    <h3 class="fw-bold" style="color: #2c3e50;">Mohammed Yousuf</h3>
+                    <h3 class="fw-bold" style="color: #2c3e50;">Mohd Yusuf</h3>
                     <p class="fw-semibold" style="color: #e74c3c;">Managing Partner</p>
                     <div class="divider mx-auto" style="width: 40px; height: 2px; background: #f39c12; margin: 10px auto;"></div>
-                    <p class="text-muted small" style="font-size: 0.95rem; line-height: 1.6;">
-                        Mohammed Yousuf brings over 10 years of extensive legal experience, specializing in criminal defense, 
-                        civil litigation, and alternative dispute resolution. As Managing Partner, he oversees the firm's 
-                        strategic operations and client relations. His sharp analytical skills, combined with a client-centric 
-                        approach, have earned him a reputation as a trusted legal advisor. Yousuf is committed to delivering 
-                        justice with integrity and excellence.
-                    </p>
+                    <p class="text-muted small" style="font-size: 0.95rem; line-height: 1.6;">Mohd Yusuf, we are dedicated to providing expert legal services for individuals facing family issues such as, but not limited to, divorce, separation, property division, and inheritance disputes. Our goal is to guide you through the complexities of family law with compassion and professionalism, ensuring that you receive the best possible legal support for your situation.</p>
                 </div>
             </div>
 

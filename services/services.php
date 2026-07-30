@@ -52,23 +52,26 @@
             </div>
             
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <a href="false-sexual-harassment.php"><img src="<?php echo $basePath; ?>assets/images/false-sexual-harassment-new.png" class="card-img-top" alt="false-sexual-harassment-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-shield-alt"></i></p>
-                    <p><a href="false-sexual-harassment.php">False Sexual Harassment</a></p>                    
-                </div>                
+                    <p>False Sexual Harassment</p>                    
+                </div>
+                </a>              
             </div>
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <a href="family-settlement.php"><img src="<?php echo $basePath; ?>assets/images/family-settlement-new.png" class="card-img-top" alt="family-settlement-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-handshake"></i></p>
-                    <p><a href="family-settlement.php">Family Settlement</a></p>                    
-                </div>                
+                    <p>Family Settlement</p>                    
+                </div>
+                </a>               
             </div>
             
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <a href="property-disputes.php"><img src="<?php echo $basePath; ?>assets/images/propert-dispites-new.png" class="card-img-top" alt="propert-dispites-new">
                 <div class="service-icon">
-                    <p><i class="fas fa-building"></i></p>
-                    <p><a href="property-disputes.php">Property Disputes</a></p>                    
-                </div>                
+                    <p>Property Disputes</p>
+                </div>
+                </a>            
             </div>    
         </div>
     </div>
