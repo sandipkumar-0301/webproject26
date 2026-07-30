@@ -1,100 +1,54 @@
 <?php
 header('Content-Type: application/json');
 
-// Enable error reporting for debugging (remove in production)
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// ✅ Allow both GET and POST for debugging
+// Change this line:
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// To this:
+if ($_SERVER["REQUEST_METHOD"] == "POST" || $_SERVER["REQUEST_METHOD"] == "GET") {
     
-    // Sanitize and validate inputs
-    $name = isset($_POST['name']) ? htmlspecialchars(strip_tags(trim($_POST['name']))) : '';
-    $email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
+    // Get data from either POST or GET
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = isset($_POST['name']) ? htmlspecialchars(strip_tags(trim($_POST['name']))) : '';
+        $email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
+    } else {
+        // GET method (for debugging only)
+        $name = isset($_GET['name']) ? htmlspecialchars(strip_tags(trim($_GET['name']))) : '';
+        $email = isset($_GET['email']) ? filter_var(trim($_GET['email']), FILTER_SANITIZE_EMAIL) : '';
+    }
     
-    // Validate inputs
+    // Rest of your code...
     if (empty($name) || strlen($name) < 2) {
-        echo json_encode([
-            'status' => 'error', 
-            'message' => 'Please enter a valid name (minimum 2 characters)'
-        ]);
+        echo json_encode(['status' => 'error', 'message' => 'Please enter a valid name']);
         exit;
     }
     
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode([
-            'status' => 'error', 
-            'message' => 'Please enter a valid email address'
-        ]);
+        echo json_encode(['status' => 'error', 'message' => 'Please enter a valid email']);
         exit;
     }
     
-    // Email configuration
-    $to = "your-email@example.com"; // CHANGE THIS TO YOUR EMAIL
+    // Send email
+    $to = "your-email@example.com";
     $subject = "New Subscription from $name";
+    $message = "New subscription request:\n\n";
+    $message .= "Name: $name\n";
+    $message .= "Email: $email\n";
+    $message .= "IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
+    $message .= "Date: " . date('Y-m-d H:i:s');
     
-    // Build email message
-    $message = "========================================\n";
-    $message .= "NEW SUBSCRIPTION REQUEST\n";
-    $message .= "========================================\n\n";
-    $message .= "Name: " . $name . "\n";
-    $message .= "Email: " . $email . "\n";
-    $message .= "IP Address: " . $_SERVER['REMOTE_ADDR'] . "\n";
-    $message .= "User Agent: " . $_SERVER['HTTP_USER_AGENT'] . "\n";
-    $message .= "Date/Time: " . date('Y-m-d H:i:s') . "\n";
-    $message .= "========================================\n";
-    
-    // Email headers
-    $headers = "From: " . $email . "\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
     
-    // Optional: Add CC or BCC
-    // $headers .= "Cc: admin@yourdomain.com\r\n";
-    // $headers .= "Bcc: backup@yourdomain.com\r\n";
-    
-    // Try to send email
     if (mail($to, $subject, $message, $headers)) {
-        // Optional: Save to database
-        // saveToDatabase($name, $email);
-        
-        echo json_encode([
-            'status' => 'success', 
-            'message' => 'Thank you for subscribing! You will receive updates soon.'
-        ]);
+        echo json_encode(['status' => 'success', 'message' => 'Subscription successful!']);
     } else {
-        // Log error for debugging
-        error_log("Mail send failed for: $email from IP: " . $_SERVER['REMOTE_ADDR']);
-        
-        echo json_encode([
-            'status' => 'error', 
-            'message' => 'Unable to process subscription. Please try again later.'
-        ]);
+        echo json_encode(['status' => 'error', 'message' => 'Failed to send. Please try again.']);
     }
     
 } else {
-    echo json_encode([
-        'status' => 'error', 
-        'message' => 'Invalid request method. Please use POST.'
-    ]);
-}
-
-// Optional: Database function
-function saveToDatabase($name, $email) {
-    /*
-    $conn = new mysqli('localhost', 'username', 'password', 'database');
-    if ($conn->connect_error) {
-        return false;
-    }
-    
-    $stmt = $conn->prepare("INSERT INTO subscribers (name, email, ip_address, created_at) VALUES (?, ?, ?, NOW())");
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $stmt->bind_param("sss", $name, $email, $ip);
-    $result = $stmt->execute();
-    $stmt->close();
-    $conn->close();
-    return $result;
-    */
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request method. Please use POST.']);
 }
 ?>
