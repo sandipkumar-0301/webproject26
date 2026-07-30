@@ -386,7 +386,7 @@
                     <div class="bg-secondary-light p-4 p-md-5 rounded-4 h-100 shadow-sm" style="background: #F4F1EA;">
                         <h3 class="fw-bold mb-3"><i class="fas fa-envelope-open-text me-2" style="color: var(--primary-accent);"></i> Subscribe Now</h3>
                         <p class="text-muted">Stay updated with our latest legal news, IP insights, and firm announcements.</p>
-                        <form id="subscribeForm" action="#" method="post">
+                        <form id="subscribeForm" action="send-email.php" method="post">
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">Name</label>
                                 <input type="text" class="form-control rounded-pill border-0 shadow-sm" 
@@ -696,6 +696,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('subscribeForm');
+            const alertDiv = document.getElementById('subscribeAlert');
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Get the action URL
+                    const actionUrl = form.getAttribute('action') || 'send-email.php';
+                    
+                    // ✅ Use FormData from the form
+                    const formData = new FormData(form);
+
+                    // Log what's being sent (for debugging)
+                    console.log('Sending to:', actionUrl);
+                    console.log('Form data:', formData);
+
+                    // ✅ EXPLICIT POST METHOD
+                    fetch(actionUrl, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        console.log('Response status:', response.status);
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Response data:', data);
+                        if (data.status === 'success') {
+                            alertDiv.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+                            form.reset();
+                        } else {
+                            alertDiv.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                        alertDiv.innerHTML = `<div class="alert alert-danger">Network error. Please try again.</div>`;
+                    });
+                });
+            }
+        });
 </script>
 
 <?php

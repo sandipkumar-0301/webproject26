@@ -30,66 +30,44 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('subscribeForm');
     const alertDiv = document.getElementById('subscribeAlert');
 
-    if (form) { // Check if form exists on the page
-        form.addEventListener('submit', function (e) {
+    if (form) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Disable submit button to prevent double submission
+            // Disable submit button
             const submitBtn = form.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ms-2"></i>';
 
+            // Get form data
             const formData = new FormData(form);
+            
+            // Get the action URL from form or use default
+            const actionUrl = form.getAttribute('action') || 'send-email.php';
 
-            fetch('send-email.php', {
-                method: 'POST',
+            // ✅ EXPLICITLY SET METHOD TO POST
+            fetch(actionUrl, {
+                method: 'POST',  // ← Make sure this is POST
                 body: formData
             })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        alertDiv.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <i class="fas fa-check-circle me-2"></i> ${data.message}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                        </div>`;
-                        form.reset();
-                        
-                        // Optional: Close popup if subscription is successful
-                        const modalElement = document.getElementById('verify_amount_popup');
-                        if (modalElement) {
-                            const modalInstance = bootstrap.Modal.getInstance(modalElement);
-                            if (modalInstance) {
-                                setTimeout(() => modalInstance.hide(), 2000);
-                            }
-                        }
-                    } else {
-                        alertDiv.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <i class="fas fa-exclamation-circle me-2"></i> ${data.message}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                        </div>`;
-                    }
-                })
-                .catch(error => {
-                    alertDiv.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <i class="fas fa-exclamation-circle me-2"></i> Network error. Please try again.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    </div>`;
-                    console.error('Error:', error);
-                })
-                .finally(() => {
-                    // Re-enable submit button
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Submit <i class="fas fa-paper-plane ms-2"></i>';
-                    
-                    // Auto-hide alert after 5 seconds
-                    setTimeout(() => {
-                        const alert = alertDiv.querySelector('.alert');
-                        if (alert) {
-                            const bsAlert = new bootstrap.Alert(alert);
-                            bsAlert.close();
-                        }
-                    }, 5000);
-                });
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alertDiv.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+                    form.reset();
+                } else {
+                    alertDiv.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+                }
+            })
+            .catch(error => {
+                alertDiv.innerHTML = `<div class="alert alert-danger">Network error. Please try again.</div>`;
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Submit <i class="fas fa-paper-plane ms-2"></i>';
+            });
         });
     }
 });
+
