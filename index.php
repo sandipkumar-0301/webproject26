@@ -20,7 +20,7 @@
                             <i class="fas fa-gavel fa-3x mb-2" style="color:#C17B4B;"></i>
                             <p class="mb-0 fw-semibold">Your Trusted Indian Intellectual Property Law Firm</p>
                             <hr class="my-2 opacity-50">
-                            <small><a href="services/trademark.php">✦ Trademark</a> | <a href="services/copyright.php">Copyright</a> | <a href="services/patent.php">✦ Patent</a></small>
+                            <small><a href="services/trademark.php">✦ Trademark</a> | <a href="services/copyright.php">✦ Copyright</a> | <a href="services/patent.php">✦ Patent</a></small>
                         </div>
                     </div>
                 </div>
@@ -257,34 +257,11 @@
                     </div>
                 </div>
                 <div class="row equal-height-cols mt-4">
-                    <div class="col-sm-12 col-md-6 col-lg-3">
-                        <div class="inner-box">
-                            <p><i class="fa-solid fa-award"></i></p>
-                            <h4>Multi-Specialised Expertise</h4>
-                            <p>Full-service legal solutions under one roof, from commercial law to criminal defence.</p>
-                        </div>                   
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3">
-                        <div class="inner-box">
-                            <p><i class="fa-solid fa-award"></i></p>
-                            <h4>All-Women Legal Team</h4>
-                            <p>A unique, empathetic, and empowered approach that balances precision with compassion.</p> 
-                        </div>                
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3">
                         <div class="inner-box">
                             <p><i class="fa-solid fa-award"></i></p>
                             <h4>Client-Focused Culture</h4>
                             <p>Transparent communication, responsiveness, and tailored, results-driven strategies.</p>
-                        </div>                 
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3">
-                        <div class="inner-box">
-                            <p><i class="fa-solid fa-award"></i></p>
-                            <h4>Proud Level 4 B-BBEE Contributor</h4>
-                            <p>We are committed to driving transformation, diversity, and inclusive growth in the legal profession.</p>
-                        </div>                    
-                    </div>
+                        </div>   
                 </div>
             </div>
         </div>    
@@ -412,13 +389,17 @@
                         <form id="subscribeForm" action="#" method="post">
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">Name</label>
-                                <input type="text" class="form-control rounded-pill border-0 shadow-sm" placeholder="Enter your name" id="subName" required>
+                                <input type="text" class="form-control rounded-pill border-0 shadow-sm" 
+                                       placeholder="Enter your name" name="name" id="subName" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">Email Address</label>
-                                <input type="email" class="form-control rounded-pill border-0 shadow-sm" placeholder="your@email.com" id="subEmail" required>
+                                <input type="email" class="form-control rounded-pill border-0 shadow-sm" 
+                                       placeholder="your@email.com" name="email" id="subEmail" required>
                             </div>
-                            <button type="submit" class="btn btn-accent w-100 rounded-pill">Submit <i class="fas fa-paper-plane ms-2"></i></button>
+                            <button type="submit" class="btn btn-accent w-100 rounded-pill">
+                                Submit <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
                             <div id="subscribeAlert" class="mt-3 small"></div>
                         </form>
                         <div class="mt-4 pt-2">
@@ -447,14 +428,7 @@
                                         <strong>PHONE</strong><br>
                                         <a href="tel:+919220446285" class="text-dark text-decoration-none">+91 96507 32435</a>
                                     </div>
-                                </div>
-                                <div class="contact-info d-flex">
-                                    <i class="fas fa-map-marker-alt fa-fw mt-1"></i>
-                                    <div class="ms-3">
-                                        <strong>OFFICE ADDRESS</strong><br>
-                                        XXXXXX, XXXXXX, Vrindavan Garden,<br> Greater Noida, Sector 16, UP
-                                    </div>
-                                </div>
+                                </div>                                
                             </div>
                             <div class="col-md-6">
                                 <div class="contact-info d-flex mb-3">
@@ -464,12 +438,21 @@
                                         Monday – Friday | 9:00 AM – 6:00 PM
                                     </div>
                                 </div>
-                                <div class="mt-3">
+                                <!-- <div class="mt-3">
                                     <p class="fw-semibold mb-1">Follow us</p>
                                     <div class="d-flex gap-2">
                                         <a href="#" class="social-icon text-white d-inline-flex bg-secondary"><i class="fab fa-linkedin-in"></i></a>
                                         <a href="#" class="social-icon text-white d-inline-flex bg-secondary"><i class="fab fa-twitter"></i></a>
                                         <a href="#" class="social-icon text-white d-inline-flex bg-secondary"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="contact-info d-flex">
+                                    <i class="fas fa-map-marker-alt fa-fw mt-1"></i>
+                                    <div class="ms-3">
+                                        <strong>OFFICE ADDRESS</strong><br>
+                                        XXXXXX, XXXXXX, Vrindavan Garden, Greater Noida, Sector 16, UP
                                     </div>
                                 </div>
                             </div>
@@ -551,6 +534,25 @@
 
 </div>
 
+<!-- Popup Modal -->
+    <div class="modal fade" id="verify_amount_popup" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Payment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Please confirm your payment to proceed.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirm_payment">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 <style>
 #whatsapp-widget {
     position: fixed;

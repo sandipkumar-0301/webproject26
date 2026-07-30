@@ -98,5 +98,9 @@
                 margin-top: 10px;
                 margin-left: 0px;
             }
+            .inner-bg-color {
+                background: rgba(26, 63, 92, 0.4);
+                padding: 100px 5px;
+            }
 
         }
