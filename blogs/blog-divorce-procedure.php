@@ -17,7 +17,7 @@
                 <li>Consider temporary relief, custody, and maintenance issues early.</li>
             </ul>
             <p>Having the right legal guidance from the beginning can help reduce delays, protect your rights, and make the process more manageable.</p>
-            <a href="/mysite/blog.php" class="btn btn-accent mt-3">Back to Blogs</a>
+            <a href="<?php echo $basePath; ?>blog" class="btn btn-accent mt-3">Back to Blogs</a>
         </div>
     </div>
 </section>

@@ -17,7 +17,7 @@
                 <li>Maintenance and financial support in appropriate cases.</li>
             </ul>
             <p>Time is critical in such matters, and urgent legal action may be necessary to safeguard the victim and children.</p>
-            <a href="/mysite/blog.php" class="btn btn-accent mt-3">Back to Blogs</a>
+            <a href="<?php echo $basePath; ?>blog" class="btn btn-accent mt-3">Back to Blogs</a>
         </div>
     </div>
 </section>
