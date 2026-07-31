@@ -8,6 +8,54 @@
         <p class="text-center mb-5">Practical guidance on family law, divorce, maintenance, child custody, domestic violence, and property disputes.</p>
 
         <div class="row">
+            <!-- IPR Blog Cards - Add to your existing row -->
+
+<!--             <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 blog-card">
+                    <img src="assets/images/trademark-guide.png" class="card-img-top" alt="Trademark Guide">
+                    <div class="card-body">
+                        <h3 class="card-title">Protecting Your Brand: A Guide to Trademarks</h3>
+                        <p class="card-text">Learn how trademarks protect your brand name, logo, and identity. A simple guide for entrepreneurs and business owners.</p>
+                        <a href="blogs/blog-trademark-guide.php" class="btn btn-accent">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 blog-card">
+                    <img src="assets/images/copyright-protection.png" class="card-img-top" alt="Copyright Protection">
+                    <div class="card-body">
+                        <h3 class="card-title">How Copyright Protects Your Creative Work</h3>
+                        <p class="card-text">Understand copyright protection for writers, artists, musicians, and bloggers. Learn about fair use and owner rights.</p>
+                        <a href="blogs/blog-copyright-protection.php" class="btn btn-accent">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 blog-card">
+                    <img src="assets/images/patent-protection.png" class="card-img-top" alt="Patent Protection">
+                    <div class="card-body">
+                        <h3 class="card-title">Patents: Protecting Your Inventions</h3>
+                        <p class="card-text">A guide to patents for innovators and startups. Learn what can be patented and the filing process.</p>
+                        <a href="blogs/blog-patent-protection.php" class="btn btn-accent">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 blog-card">
+                    <img src="assets/images/blogger-ip-infringement.png" class="card-img-top" alt="Blogger IP Infringement">
+                    <div class="card-body">
+                        <h3 class="card-title">Avoiding Infringement as a Blogger</h3>
+                        <p class="card-text">Essential copyright tips for bloggers. Learn how to protect your own work and avoid using others' work without permission.</p>
+                        <a href="blogs/blog-blogger-ip-infringement.php" class="btn btn-accent">Read More</a>
+                    </div>
+                </div>
+            </div> -->
+
+
+
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 blog-card">
                     <img src="assets/images/live-in-relation.webp" class="card-img-top" alt="Live-in relationship">
