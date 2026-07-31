@@ -17,7 +17,7 @@
                 <li>Needs of the dependent spouse and children.</li>
             </ul>
             <p>Maintenance may be temporary, permanent, or subject to change based on circumstances. Proper legal advice is essential to present a strong case.</p>
-            <a href="<?php echo $basePath; ?>blog.php" class="btn btn-accent mt-3">Back to Blogs</a>
+            <a href="<?php echo $basePath; ?>blog" class="btn btn-accent mt-3">Back to Blogs</a>
         </div>
     </div>
 </section>

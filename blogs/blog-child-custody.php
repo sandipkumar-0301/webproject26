@@ -27,7 +27,7 @@ $basePath = $depth > 0 ? str_repeat('../', $depth) : '';
                 <li>Parents should address communication and decision-making.</li>
                 <li>Courts may review plans for fairness and stability.</li>
             </ul>
-            <a href="<?php echo $basePath; ?>blog.php" class="btn btn-accent mt-3">Back to Blogs</a>
+            <a href="<?php echo $basePath; ?>blog" class="btn btn-accent mt-3">Back to Blogs</a>
         </div>
     </div>
 </section>

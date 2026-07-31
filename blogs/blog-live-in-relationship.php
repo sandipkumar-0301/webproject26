@@ -17,7 +17,7 @@
                 <li>Children born from such relationships may receive legal protection.</li>
                 <li>Victims of abuse may seek protection under domestic violence laws.</li>
             </ul>
-            <a href="/mysite/blog.php" class="btn btn-accent mt-3">Back to Blogs</a>
+            <a href="<?php echo $basePath; ?>blog" class="btn btn-accent mt-3">Back to Blogs</a>
         </div>
     </div>
 </section>

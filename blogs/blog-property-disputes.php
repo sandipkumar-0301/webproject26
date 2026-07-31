@@ -17,7 +17,7 @@
                 <li>The need for documentation, valuations, and negotiation.</li>
             </ul>
             <p>Early legal advice can help protect your rights and reduce the risk of unfair outcomes.</p>
-            <a href="/mysite/blog.php" class="btn btn-accent mt-3">Back to Blogs</a>
+            <a href="<?php echo $basePath; ?>blog" class="btn btn-accent mt-3">Back to Blogs</a>
         </div>
     </div>
 </section>
