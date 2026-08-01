@@ -234,7 +234,8 @@
     padding: 100px 25px;
 }
 .btn-accent {
-    background: #ff6200;
+    background: #ff6200 !important;
+    color: white !important;
 }
 .body-bg-color {
     background-color: #f2f3f5;
@@ -956,3 +957,39 @@ h3 {
 #services .container a img {
     border-radius: 20px;
 }
+
+.ipr-and-family-law-blogs .nav-pills .nav-link {
+    border-radius: 30px;           /* Pill shape */
+    padding: 10px 30px;
+    margin: 0 8px;
+    background-color: #f0f0f0;     /* Inactive background */
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.ipr-and-family-law-blogs .nav-pills .nav-link.active {
+    background-color: #007bff;     /* Active blue */
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    border-color: #007bff;
+}
+
+.ipr-and-family-law-blogs {
+     padding: 20px 0px;
+}
+
+.ipr-and-family-law-blogs .nav-pills .nav-link:hover:not(.active) {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* Center the pill container */
+.ipr-and-family-law-blogs .nav-pills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
