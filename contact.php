@@ -16,25 +16,26 @@
                 <p><strong>Business Hours:</strong><br/>Monday – Friday: 9:00 AM – 6:00 PM</p>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6">
-                <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Your Name*</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email Address*</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-                
+                <div id="contactAlert"></div>
+                <form id="contactForm">
+                    <input type="hidden" name="form_type" value="contact">
+                    <div class="mb-3">
+                        <label for="contactName" class="form-label">Your Name*</label>
+                        <input type="text" class="form-control" id="contactName" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactEmail" class="form-label">Email Address*</label>
+                        <input type="email" class="form-control" id="contactEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactMessage" class="form-label">Message*</label>
+                        <textarea class="form-control" id="contactMessage" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+                </form>
             </div>
         </div>
-    </div>
+        </div>
 </section>
 
 <?php
