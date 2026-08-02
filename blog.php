@@ -18,14 +18,14 @@
                     </ul>
                 </div>                
             </div>            
-        </div>
+        </div>       
 
-        <p class="text-center mb-5">Practical guidance on family law, divorce, maintenance, child custody, domestic violence, and property disputes.</p>
 
         <!-- TAB CONTENT - FIXED FOR BOOTSTRAP 4 -->
         <div class="tab-content">
             <!-- IPR BLOGS TAB - ACTIVE BY DEFAULT -->
             <div id="ipr-blogs" class="tab-pane fade show active">
+                <p class="text-center mb-5">Practical guidance on intellectual property rights, trademarks, copyrights, patents, designs, and trade secrets.</p>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 blog-card">
@@ -75,6 +75,7 @@
 
             <!-- FAMILY LAW BLOGS TAB -->
             <div id="family-law-blogs" class="tab-pane fade">
+                <p class="text-center mb-5">Practical guidance on family law, divorce, maintenance, child custody, domestic violence, and property disputes.</p>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 blog-card">
