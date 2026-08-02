@@ -10,10 +10,10 @@
                 <div class="ipr-and-family-law-blogs text-center">
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#ipr-blogs">IPR Blog</a>
+                            <a class="nav-link active" data-toggle="pill" href="#ipr-blogs">IPR Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="pill" href="#family-law-blogs">Family Law Blog</a>
+                            <a class="nav-link" data-toggle="pill" href="#family-law-blogs">Family Law Blog</a>
                         </li>
                     </ul>
                 </div>                
@@ -25,7 +25,7 @@
         <!-- TAB CONTENT - FIXED FOR BOOTSTRAP 4 -->
         <div class="tab-content">
             <!-- IPR BLOGS TAB - ACTIVE BY DEFAULT -->
-            <div id="ipr-blogs" class="tab-pane fade">
+            <div id="ipr-blogs" class="tab-pane fade show active">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 blog-card">
@@ -74,7 +74,7 @@
             </div>
 
             <!-- FAMILY LAW BLOGS TAB -->
-            <div id="family-law-blogs" class="tab-pane fade show active">
+            <div id="family-law-blogs" class="tab-pane fade">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 blog-card">
