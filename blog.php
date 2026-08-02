@@ -27,8 +27,7 @@
             <!-- IPR BLOGS TAB - ACTIVE BY DEFAULT -->
             <div id="ipr-blogs" class="tab-pane fade">
                 <div class="row">
-                    <h2>Coming soon blog</h2>
-                    <!-- <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 blog-card">
                             <img src="assets/images/trademark-guide.png" class="card-img-top" alt="Trademark Guide">
                             <div class="card-body">
@@ -70,7 +69,7 @@
                                 <a href="blogs/blog-blogger-ip-infringement.php" class="btn btn-accent">Read More</a>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
 

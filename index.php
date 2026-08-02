@@ -386,22 +386,19 @@
                     <div class="bg-secondary-light p-4 p-md-5 rounded-4 h-100 shadow-sm" style="background: #F4F1EA;">
                         <h3 class="fw-bold mb-3"><i class="fas fa-envelope-open-text me-2" style="color: var(--primary-accent);"></i> Subscribe Now</h3>
                         <p class="text-muted">Stay updated with our latest legal news, IP insights, and firm announcements.</p>
-                        <form id="subscribeForm" action="send-email" method="post">
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Name</label>
-                                <input type="text" class="form-control rounded-pill border-0 shadow-sm" 
-                                       placeholder="Enter your name" name="name" id="subName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Email Address</label>
-                                <input type="email" class="form-control rounded-pill border-0 shadow-sm" 
-                                       placeholder="your@email.com" name="email" id="subEmail" required>
-                            </div>
-                            <button type="submit" class="btn btn-accent w-100 rounded-pill">
-                                Submit <i class="fas fa-paper-plane ms-2"></i>
-                            </button>
-                            <div id="subscribeAlert" class="mt-3 small"></div>
-                        </form>
+                        <div id="subscribeAlert"></div>
+                            <form id="subscribeForm">
+                                <input type="hidden" name="form_type" value="subscription">
+                                <div class="mb-3">
+                                    <label for="subName" class="form-label">Your Name*</label>
+                                    <input type="text" class="form-control" id="subName" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subEmail" class="form-label">Email Address*</label>
+                                    <input type="email" class="form-control" id="subEmail" name="email" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Subscribe <i class="fas fa-paper-plane ms-2"></i></button>
+                            </form>
                         <div class="mt-4 pt-2">
                             <i class="fas fa-shield-alt me-1"></i> We respect your privacy.
                         </div>
@@ -653,150 +650,6 @@
     }
 }
 </style>
-
-<script>
-// =============================================
-// PART 1: WHATSAPP WIDGET
-// =============================================
-document.addEventListener('DOMContentLoaded', function () {
-    const button = document.getElementById('whatsapp-button');
-    const popup = document.getElementById('whatsapp-popup');
-    const close = document.getElementById('whatsapp-close');
-
-    if (button) {
-        button.addEventListener('click', function () {
-            popup.style.display = 'block';
-        });
-    }
-
-    if (close) {
-        close.addEventListener('click', function () {
-            popup.style.display = 'none';
-        });
-    }
-});
-
-// =============================================
-// PART 2: DISCLAIMER MODAL (24-hour cooldown)
-// =============================================
-document.addEventListener('DOMContentLoaded', function () {
-    const popupTime = localStorage.getItem('disclaimerPopupTime');
-    const now = new Date().getTime();
-    const oneDay = 86400000; // 24 hours
-
-    // Show disclaimer if not shown in last 24 hours
-    if (!popupTime || (now - popupTime) > oneDay) {
-        const modal = new bootstrap.Modal(document.getElementById('disclaimerModal'));
-        modal.show();
-
-        // When user clicks "I Agree"
-        document.getElementById('agreeButton').addEventListener('click', function () {
-            localStorage.setItem('disclaimerPopupTime', now.toString());
-            modal.hide();
-        });
-
-        // When user clicks "I Disagree" - redirect or handle
-        document.getElementById('disagreeButton').addEventListener('click', function () {
-            localStorage.setItem('disclaimerPopupTime', now.toString());
-            modal.hide();
-            // Optional: Redirect to Google or close
-            // window.location.href = 'https://www.google.com';
-        });
-
-        // When modal is closed (X button or click outside)
-        document.getElementById('disclaimerModal').addEventListener('hidden.bs.modal', function () {
-            localStorage.setItem('disclaimerPopupTime', now.toString());
-        });
-    }
-});
-
-// =============================================
-// PART 3: SUBSCRIPTION FORM
-// =============================================
-// =============================================
-// PART 3: SUBSCRIPTION FORM (FIXED)
-// =============================================
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('subscribeForm');
-    const alertDiv = document.getElementById('subscribeAlert');
-
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Disable submit button
-            const submitBtn = form.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ms-2"></i>';
-
-            // ✅ Use absolute URL to avoid redirects
-            const actionUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'send-email';
-            // OR simply: const actionUrl = '/send-email.php';
-            
-            const formData = new FormData(form);
-
-            console.log('=== Form Submission ===');
-            console.log('Action URL:', actionUrl);
-            console.log('Current page:', window.location.href);
-            
-            for (let pair of formData.entries()) {
-                console.log(pair[0] + ':', pair[1]);
-            }
-
-            // ✅ Use 'manual' redirect to detect redirects
-            fetch(actionUrl, {
-                method: 'POST',
-                body: formData,
-                redirect: 'manual'  // ← Detect redirects
-            })
-            .then(response => {
-                console.log('Response status:', response.status);
-                console.log('Response type:', response.type);
-                console.log('Redirected?', response.redirected);
-                console.log('Final URL:', response.url);
-                
-                // If redirected, show error
-                if (response.redirected) {
-                    throw new Error(`Redirect detected to: ${response.url}. The server is redirecting POST to GET.`);
-                }
-                
-                // Check if response is JSON
-                const contentType = response.headers.get('content-type');
-                if (!contentType || !contentType.includes('application/json')) {
-                    throw new Error(`Expected JSON but got ${contentType}. The file might be missing or has errors.`);
-                }
-                
-                return response.json();
-            })
-            .then(data => {
-                console.log('Server response:', data);
-                if (data.status === 'success') {
-                    alertDiv.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <i class="fas fa-check-circle me-2"></i> ${data.message}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    </div>`;
-                    form.reset();
-                } else {
-                    alertDiv.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <i class="fas fa-exclamation-circle me-2"></i> ${data.message}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    </div>`;
-                }
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-                alertDiv.innerHTML = `<div class="alert alert-danger">
-                    <strong>Error:</strong> ${error.message}
-                </div>`;
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Submit <i class="fas fa-paper-plane ms-2"></i>';
-            });
-        });
-    }
-});
-</script>
 
 <?php
     include('commonFiles/footer.php');
